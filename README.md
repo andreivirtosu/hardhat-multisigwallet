@@ -1,6 +1,6 @@
-# Basic Sample Hardhat NextJS Project
+# Hardhat Multisig Wallet
 
-This project demonstrates a full stack implementation of the Greeter.sol contract using HardHat, NextJS, Moralis, Tailwindcss.
+This project demonstrates a full stack implementation of a multisig wallet using HardHat 
 
 Build
 ==================
@@ -19,7 +19,7 @@ $ yarn hardhat node
 Deploy contract
 
 ```
-$ yarn hardhat run scripts/01_deploy_greeter.js --network localhost
+$ yarn hardhat run scripts/01_deploy_multisig.js --network localhost
 ```
 
 Run frontend

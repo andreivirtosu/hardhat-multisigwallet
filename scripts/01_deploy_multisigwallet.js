@@ -2,14 +2,20 @@ const hre = require("hardhat");
 
 async function main() {
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const MultiSigWallet = await hre.ethers.getContractFactory("MultiSigWallet");
 
-  await greeter.deployed();
+  const accounts = await hre.ethers.getSigners();
 
-  console.log("Greeter deployed to:", greeter.address);
+  const onwer_count = 3;
+  const approvals = 2;
+  let owners = accounts.slice(0, onwer_count).map((a) => a.address);
+  const msw = await MultiSigWallet.deploy(owners, approvals);
 
-  saveFrontendFiles(greeter);
+  await msw.deployed();
+
+  console.log("MultiSigWallet deployed to:", msw.address);
+
+  //saveFrontendFiles(greeter);
 }
 
 function saveFrontendFiles(greeter) {
