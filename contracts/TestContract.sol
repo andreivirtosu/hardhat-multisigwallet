@@ -12,7 +12,7 @@ contract TestContract {
     }
 
     function getData() public pure returns(bytes memory) {
-        return abi.encodeWithSignature("complete(uint256)", 888);
+        return abi.encodeWithSelector(this.complete.selector, 888);
     }
 }
 
