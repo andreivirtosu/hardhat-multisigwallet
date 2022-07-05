@@ -9,6 +9,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 });
 
 require("./tasks/faucet");
+require("solidity-coverage");
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
